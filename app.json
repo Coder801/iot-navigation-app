@@ -9,7 +9,12 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "MapMate uses Bluetooth to connect to external devices.",
+        "NSBluetoothPeripheralUsageDescription": "MapMate needs Bluetooth access to communicate with paired devices."
+      },
+      "bundleIdentifier": "com.dmytroonishchenko.mapmate"
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +24,16 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.BLUETOOTH_ADVERTISE"
+      ],
+      "package": "com.dmytroonishchenko.mapmate"
     },
     "web": {
       "output": "static",
@@ -38,7 +52,8 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "react-native-ble-plx"
     ],
     "experiments": {
       "typedRoutes": true,
